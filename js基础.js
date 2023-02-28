@@ -71,3 +71,53 @@
  * toLocaleString 把数组转换为本地数组，并返回结果
  * valueOf 返回数组对象的原始值
  */
+
+// 对象遍历方法
+/**
+ *
+ * for in
+ * 基本语法
+ * for(let key in obj){循环体程序}
+ * 需要注意的是
+ *  1. 变量中存储的键名，通过键名获取存储的键值
+ *     因为是变量，点语法不支持，需要使用obj[key]形式获取
+ *  2. 循环便令，定义 let 和 var 执行效果是不同的
+ *
+ * Object.keys(obj)
+ *  Object.keys 返回对象所有可枚举键值组成的数组，
+ *  遍历该数组再执行操作
+ *
+ * Object.values(obj)
+ * 返回对象中所有值组成的数组
+ */
+
+// 数组扁平化
+/**
+ * 所谓数组扁平化就是将多维数组转化为一维数组，
+ * 一般数组扁平化数组中存储的多维数据都是数组，不会是对象或函数
+ */
+/**
+ * 最常用的方法就是，数组 toString()方法转为字符串
+ * 结果就是 获取数组中的每个单元的数据组成一个字符串，使用逗号间隔
+ * 在以逗号为间隔，将字符串转化为数组
+ *
+ */
+function flat1(arr) {
+  return arr.toString().split(',');
+}
+/**
+ * 还可以使用 数组.some 方法判断数组中是否还存在数组
+ * 再使用 展开运算符 赋值
+ */
+function flat2(arr) {
+  while (arr.some((item) => Array.isArray(item))) {
+    arr = [].concat(...arr);
+  }
+  return arr;
+}
+/**
+ * es6 中，新增flat函数也可以实现数组的扁平化，参数是固定的
+ */
+var arr = [].flat(Infinity);
+
+
