@@ -66,3 +66,19 @@ arr.slice();
 
 // 4 concat 方法
 arr.concat();
+
+// 实现一个方法，找出仅存在与A 或 B 中的所有数字
+
+/**
+ *
+ * @param {Array} arr
+ * @param {Array} brr
+ */
+function getDiff(arr, brr) {
+  var onlyArr = arr.filter((item) => !brr.includes(item));
+  var onlyBrr = brr.filter((item) => !arr.includes(item));
+  return {
+    onlyArr,
+    onlyBrr,
+  };
+}
