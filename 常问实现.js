@@ -82,3 +82,31 @@ function getDiff(arr, brr) {
     onlyBrr,
   };
 }
+
+// 是否存在 a ,a == && a==1 为true
+
+var value = -1;
+Object.defineProperty(window, 'a', {
+  get() {
+    return (value += 1);
+  },
+});
+if (a == 0 && a == 1) {
+  console.log('true');
+}
+
+// 实现一个 add 方法，是计算结果能够满足如下预期
+// add(1)(2)(3) = 6,add(1,2,3)=6
+
+function add(...args) {
+  if (args.length > 1) {
+    return args.reduce((a, b) => a + b);
+  }
+  if (args.length === 1) {
+    return (_) => {
+      return (v) => {
+        return args[0] + _ + v;
+      };
+    };
+  }
+}
