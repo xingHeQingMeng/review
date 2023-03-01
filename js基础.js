@@ -65,7 +65,7 @@
  *  console.log(strObj instanceof String) // true
  *  改代码段判断的是变量 strObj 是否为 String 对象的实例。
  *  尽管不像 typeof 方法那样灵活，但是在 typeof 方法返回 object 的情况下 instanceof 就很有用
- *  
+ *
  */
 // 如何理解symbol
 
@@ -241,4 +241,29 @@ var arr = [].flat(Infinity);
  *     直到 Promise 对象 resolve 得到 resolve 的值作为 await 表达式的运算结果
  *  2. await 只能在 async 函数内部使用，用在普通函数里就会报错
  *
+ */
+
+// JavaScript 伪数组
+/**
+ * 数组
+ *  数组是一种类列表对象，它的原型中提供了遍历和修改元素的相关操作。
+ *  JavaScript 数组的长度和元素类型都是非固定的。只能用整数作为数组元素的索引，而不能用字符串
+ *  对象是没有索引的，是数组的基本特征。
+ *
+ * 伪数组
+ *  伪数组是一个对象，而真实的数组是一个Array
+ *  拥有length属性，且必须是number类型，其他属性（索引）为字符串
+ *  不具有数组所具有的方法，如 forEach，但有Object的方法
+ *  伪数组长度不可变，真数组长度可变，
+ *  可以通过 for in 遍历
+ *
+ * 常见的伪数组有
+ *  - 函数内部 arguments 对象
+ *  - DOM 对象列表 比如通过 document.getElementByTags，document.querySelectAll 得到的列表
+ *  - jQery 对象 $('div')
+ *
+ * 伪数组存在的意义是可以让普通的对象也能正常使用数组的很多方法
+ *  - Array.prototype.forEach.call(arguments,(v)=>{})
+ * 
+ * 
  */
