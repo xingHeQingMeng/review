@@ -52,6 +52,21 @@
  * Object Array 数组类型
  */
 
+// instanceof
+/**
+ * js中常用 typeof 来判断数据类型，但是用 typeof 是存在一个缺陷，
+ * 在判断引用类型存储值时，无论什么类型的对象，他都返回 object ，
+ * 因此 ECMAScript 引入了一个 Java 运算符 instanceof 来解决这个问题。
+ * instanceof 运算符 与typeof 运算符相似，用于识别正在处理的对象的类型。
+ * 与 typeof 方法不同的时，instanceof 方法要求开发者明确的确认对象为某特定类型。
+ *
+ * 1. instanceof
+ *  var strObj  = new String("aaaa")
+ *  console.log(strObj instanceof String) // true
+ *  改代码段判断的是变量 strObj 是否为 String 对象的实例。
+ *  尽管不像 typeof 方法那样灵活，但是在 typeof 方法返回 object 的情况下 instanceof 就很有用
+ *  
+ */
 // 如何理解symbol
 
 /**
