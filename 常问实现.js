@@ -110,3 +110,31 @@ function add(...args) {
     };
   }
 }
+
+// 千分位
+/**
+ * 本质是要将数字转化为带有千分位字符串
+ */
+// 方法一 使用正则方法
+var str = 12345 + '';
+console.info(
+  str.replace(/\d{1,3}(?=(\d{3})+$)/, function (s) {
+    return (s = ',');
+  })
+);
+//方法二  数字转数组 反转后 添加 , 再反转回来拼接为字符串
+console.info(
+  str
+    .split('')
+    .reverse()
+    .join('')
+    .replace(/(\d{3})+?/g, function (s) {
+      return s + ',';
+    })
+    .replace(/,$/, '')
+    .split('')
+    .reverse()
+    .join('')
+);
+// 方法三 toLocaleString
+(123456).toLocaleString();
