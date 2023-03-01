@@ -20,3 +20,27 @@
  *
  * 现在 W3C浏览器中也支持 IE 低版本浏览器写法
  */
+
+// js 中事件绑定的方法
+/**
+ * 事件绑定
+ * 要让 js 对用户的操作做出响应，首先要对 dom 元素绑定事件处理函数。
+ * 所谓事件处理函数，就是处理用户操作的函数，不同的操作对应不同的名称。
+ *
+ * 在 JavaScipt 中，有三追踪常用的绑定事件的方法
+ *  - 在 DOM 元素中直接绑定：
+ *    <input type='button' value='click' onclick='hello()'/>
+ *    <script>
+ *      function hello(){alert('hello world!')}
+ *    </script>
+ *  - 在 JavaScript 代码中绑定
+ *      document.getElementById('btn').onclick = function(){alert('hello world!')}
+ *  - 绑定事件监听函数
+ *      利用 addEventListener() 或 attachEvent() 来绑定事件监听函数
+ *
+ * 事件监听
+ * 关于事件监听，W3C 规范中定义了3个时间阶段，依次是捕获阶段，目标阶段，冒泡阶段
+ * 优点：
+ *  - 可以绑定多个事件；常规绑定方法后绑定的事件会替换先绑定的事件
+ *  - 可以接触相应的绑定 removeEventListener() 或 detachEvent
+ */
